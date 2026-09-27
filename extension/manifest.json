@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Insta Focus – No Reels",
+  "version": "1.0.0",
+  "description": "Use Instagram for messages and posts only. Hides the Reels tab, Reels in the feed and redirects away from Reels pages.",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.instagram.com/*", "https://instagram.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_title": "Insta Focus",
+    "default_popup": "popup.html"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "insta-focus@swipe-it-vibe",
+      "strict_min_version": "121.0"
+    },
+    "gecko_android": {
+      "strict_min_version": "121.0"
+    }
+  }
+}
